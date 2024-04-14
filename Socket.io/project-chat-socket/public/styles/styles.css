@@ -1,0 +1,11 @@
+#messages {
+    background-color: black;
+    width: 500px;
+    height: 700px;
+    color: white;
+}
+
+li {
+    font-weight: bold;
+    text-transform: uppercase;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function h1click() {
+            console.log("Executando função")
+        }
+
+        function changeH1(texto){
+            let h1 = document.getElementsByTagName("h1")[0];
+            h1.textContent = texto;
+        }
+
+        function hideH1(){
+            let h1 = document.getElementsByTagName("h1")[0];
+            h1.style.display = "none";
+        }
+
+        // Com o onChange ele executa quando sai o foco
+        // Com o onInput ele executa em tempo real
+    </script>
+</head>
+<body>
+    <h1 onClick="h1click()">Clique aqui</h1>
+    <h2 onClick="this.style.color = 'red' ">Clique aqui</h2> <!-- Nesse contexto o this é o próprio elemento -->
+
+    <input id="texto" type="text" onInput="changeH1(this.value)">
+
+    <button onClick="hideH1()">
+        Clicar
+    </button>
+</body>
+</html>

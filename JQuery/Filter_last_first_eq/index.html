@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>JQuery</title>
+</head>
+<body>
+    <div id="container">
+        <div class="div1" id="div1">Div 1</div>
+        <div class="div2" id="div2">Div 2</div>
+        <div class="div1" id="div3">Div 3</div>
+        <div class="div2" id="div4">Div 4</div>
+        <div class="div1" id="div5">Div 5</div>
+        <div class="div2" id="div6">Div 6</div>
+        <div class="div1" id="div7">Div 7</div>
+        <div class="div2" id="div8">Div 8</div>
+        <div class="div1" id="div9">Div 9</div>
+        <div class="div2" id="div10">Div 10</div>
+    </div>
+    <script>
+        let selected = $("div");
+        selected.filter(".div2"); //Filtrar dentre as divs apenas as que tiverem uma class div2
+        selected.filter("#div5");
+
+        $("#container").children().filter(".div2");
+        $("#container").children().first(".div2"); //Pega o primeiro elemento
+        $("#container").children().last(".div2"); //Pega o último elemento
+        $("#container").children().not(".div2"); //Pega os elementos que não possuem class div2
+
+        $("#container").children().eq(2); //Pega o elemento que seria o indice do array
+        $("#container").children()[2];
+
+    </script>
+</body>
+</html>

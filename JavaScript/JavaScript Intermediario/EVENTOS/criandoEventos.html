@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+        function f() {
+            console.log("teste")
+            console.log(this); // Window
+            // Para que uma função reconheça o elemento que chamou ela através de eventos nos atributos na TAG, 
+            // é necessário que seja passado como argumento da função o "this"
+        }
+
+        function f1(e) {
+            console.log("teste2");
+            console.log(this); //Elemento
+            console.log(e.target); //Elemento
+            console.log(e); //Evento
+        }
+        
+        window.onload = function() {
+            let h1 = document.getElementsByTagName("h1")[0];
+
+            h1.addEventListener("click", f1);
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1 onclick="f()">Title</h1>
+</body>
+</html>

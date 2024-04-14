@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #tela {
+            
+        }
+    </style>
+</head>
+<body>
+    <canvas id="tela" width="500px" height="500px">
+
+    </canvas>
+    <script>
+        let tela = document.getElementById("tela");
+        let ctx = tela.getContext("2d");
+
+
+        let circle = {
+            x: 250,
+            y: 250,
+            raio: 100,
+            inicio: 0,
+            fim: 0
+        }
+
+        function drawCircle(circle) {
+
+            ctx.beginPath();
+            ctx.rect(0, 0, 500, 500);
+            ctx.fillStyle = "beige";
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "black";
+            ctx.arc(circle.x, circle.y, circle.raio, circle.inicio, circle.fim);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        drawCircle(circle);
+
+        setInterval(function(){
+            if(circle.fim < 2 * Math.PI) {
+                circle.fim += 0.3;
+                circle.x += 3;
+            }
+
+            drawCircle(circle)
+        }, 30)
+
+
+    </script>
+</body>
+</html>

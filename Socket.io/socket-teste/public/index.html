@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+
+<body>
+    <!-- <div id="id">
+
+    </div> -->
+
+    <div id="main">
+         
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        //Criando o socket, que é a conexão do front-end com o back-end
+        const socket = io('http://localhost:3000')
+
+        socket.on('Hello', (data) => {
+            console.log(data.msg)
+            // socket.emit('hello_client_response', { msg: "Tudo certinho" })
+        })
+
+
+
+
+
+
+
+
+
+
+        // setInterval(() => {
+        //     fetch("/list")
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             let list = "<ul>"
+        //             data.map(item => {
+        //                 list += `<li>${item}</li>`
+        //             })
+        //             list += `</ul>`
+        //             document.querySelector("#list").innerHTML = list;
+        //         })
+        // }, 1000)
+    </script>
+</body>
+
+</html>

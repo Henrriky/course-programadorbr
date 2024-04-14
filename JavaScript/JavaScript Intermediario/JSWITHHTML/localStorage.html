@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            // É UMA MANEIRA DE SALVAR OS DADOS
+
+            window.localStorage.setItem(); // Gravar um dado na memória
+            window.localStorage.getItem(); // Pegar um dado na memória
+            window.localStorage.removeItem(); // Apaga um dado na memória
+            window.localStorage.clear();
+            
+            // window.localStorage.setItem("nome", "Igor")
+            // let n = localStorage.getItem("nome");
+            // console.log(n); //Igor
+
+            onload = function() {
+                let nome = localStorage.getItem("nome");
+                document.getElementById("nome").textContent = nome;
+                // NESSE EXEMPLO ESTAMOS FAZENDO A PERSISTENCIA DE DADOS
+            }
+            function atualizar(e) {
+                let valor = e.value;
+                let h1 = document.getElementById("nome");
+                h1.innerHTML = valor;
+
+                localStorage.setItem("nome", valor);
+            }
+            
+            // O localStorage só armazena strings, mas é possivel armazenar numeros, objetos, booleanos
+            
+        </script>
+    </head>
+    <body>
+        <h1 id="nome"></h1>
+        <input type="text" oninput="atualizar(this)">
+    </body>
+</html>

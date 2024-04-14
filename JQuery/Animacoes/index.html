@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="button">Fade out</button>
+    <div id="square" style="width: 300px; height: 300px; background-color: aqua;"></div>
+
+
+    <div id="square" class="green" style="width: 300px; height: 300px; background-color: green;"></div>
+
+    <button id="animate">Animate</button>
+    <button id="stopAnimation">Stop Animation</button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $('#button').click((e) => {
+            console.log(e.target); //Elemento
+            console.log(e.type); //Click
+            $("#square").fadeOut(3000); //Desaparece com animação de 3 seg
+            $("#square").fadeIn(3000); //Aparece com animação
+
+            $("#square").fadeOut('slow'); 
+            $("#square").fadeIn('fast'); 
+
+            $("#square").fadeToggle(); //Aparece e desaparece de acordo com o estado dele
+
+            $("#square").fadeTo(3000, 0.5); //Faz uma animação de 3 seg e vai apenas a opacidade de 0.5 ou  a desejada
+
+            $("#square").slideDown(); //Faz uma animação do elemento aparecendo para baixo;
+            $("#square").slideUp(); //Faz uma animação do elemento aparecendo para cima;
+            $("#square").slideToggle(); //Faz uma animação do elemento aparecendo para baixo ou para cima
+        })
+
+        $('#animate').click(() => {
+            $(".green").animate({
+                height: 500,
+                width: 600,
+            }, 2000)
+        })
+
+        $('#stopAnimation').click(() => {
+            $(".green").stop();
+        })
+    </script>
+</body>
+
+</html>

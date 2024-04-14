@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onOver(element){
+            element.style.backgroundColor = "blue"
+        }
+        function onOut(element){
+            element.style.backgroundColor = "initial"
+        }
+    </script>
+</head>
+<body onLoad="console.log('Página completamente carregada')">
+     <!-- Onload serve para executar uma função quando a página é carregada-->
+    <img src="https://picsum.photos/200/300" alt="">
+    <hr>
+    <button onmouseover="onOver(this)"
+            onmouseout="onOut(this)">click</button>
+</body>
+</html>

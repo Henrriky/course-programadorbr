@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <style>
+        .container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+        .video {
+            width: 100%;
+        }
+
+        .controle {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .btn {
+            color: white;
+            font-size: 25px;
+            /* margin: 10px; */
+            margin-inline: 5px;
+            top: 100%;
+            cursor: pointer;
+        }
+
+         .controllers {
+            position: relative;
+            top: 100%;
+            transform: translateY(-150%);
+            background-color: rgba(128, 128, 128, 0.255);
+            padding: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .controle:hover .controllers {
+            opacity: 1;
+        }
+
+        /* .controle:hover {
+            opacity: 1;
+        }  */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video id="video1" src="./parte1.mp4" class="video">
+
+        </video>
+        <div class="controle">
+            <div class="controllers">
+                <i onclick="retroceder()" class="ph-skip-back btn"></i>
+                <i onclick="avancar()" class="ph-skip-forward btn"></i>
+                <i onclick="iniciar()" class="ph-play btn"></i>
+                <i onclick="parar()" class="ph-stop btn"></i>
+                <i onclick="aumentar_vel()" class="ph-clock-clockwise btn"></i>
+                <i onclick="diminuir_vel()" class="ph-clock-counter-clockwise btn"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        let video = document.getElementById("video1");
+
+        function retroceder(){
+            video.currentTime -= 5;
+        }
+        function avancar(){
+            video.currentTime += 5;
+        }
+        function iniciar(){
+            video.play();
+        }
+        function parar(){
+            video.pause();
+            video.currentTime = 0;
+        }
+        function aumentar_vel(){
+            video.playbackRate += 0.1;
+        }
+        function diminuir_vel(){
+            video.playbackRate -= 0.1;
+        }
+    </script>
+</body>
+</html>
